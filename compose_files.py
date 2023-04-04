@@ -55,7 +55,7 @@ def convert_file(in_path, out_path):
     
     out_content = ""
     for i, v in enumerate(content):
-        if i % 2 == 0:
+        if not i % 2:
             out_content += v
             continue
         
