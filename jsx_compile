@@ -1,8 +1,0 @@
-#!/bin/sh
-
-(ls | grep "^src$") || (echo Cannot find src directory. ; exit 1)
-rm -rf /tmp/jsx_compile_backuptest
-mv ./output /tmp/jsx_compile_backuptest
-python ./compose_files.py --in ./src --out ./output --exclude node_modules .git package.json package-lock.json .babelrc
-cd src > /dev/null
-npx babel --config-file ./.babelrc ../output/*.jsx -d ../output/dist

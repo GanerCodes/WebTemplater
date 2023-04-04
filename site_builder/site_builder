@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+curdir=$(dirname -- "$0")
+path=${1:-"./src"}
+dest=${2:-"./dest"}
+
+[ -d "$path" ] || (echo Error: cannot find input directory. ; exit 1)
+
+path=$(realpath "$path")
+dest=$(realpath "$dest")
+
+[[ -d "$dest" && "$(ls -A $dest)" ]] && (echo Error: output directory is not empty. ; exit 1)
+
+cd "$curdir"
+[[ -d "./src" ]] && rm -r "./src"
+[[ -d "./output" ]] && rm -r "./output"
+cp -r "$path" "./src"
+python ./compose_files.py --in ./src --out ./output
+python ./compile_jsx.py
+mv "./output" "$dest"
+rm -r "./src"

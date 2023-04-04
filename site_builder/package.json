@@ -1,0 +1,25 @@
+{
+  "name": "webtemplater",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GanerCodes/WebTemplater.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GanerCodes/WebTemplater/issues"
+  },
+  "homepage": "https://github.com/GanerCodes/WebTemplater#readme",
+  "dependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/plugin-transform-react-jsx": "^7.21.0"
+  }
+}
